@@ -1,4 +1,4 @@
-##类型别名
+## 类型别名
 
 ```typescript
     type Name = string | number;
@@ -11,7 +11,7 @@
     }
 ```
 
-##字符串字面量类型
+## 字符串字面量类型
 用来约束取值只能是某几个字符串中的一个
 
 ```typescript
@@ -23,10 +23,10 @@
     handleEvent(document.getElementById('hello'),'scroll'); // 只能是'click'、'scroll'、'mousemove'三种事件
 ```
 
-##元组（Tuple）
+## 元组（Tuple）
 合并不同类型的对象
 
-###例子
+### 例子
 
 ```typescript
     let qzc: [string, number] = ['qzc', 18];
@@ -45,7 +45,7 @@
     qzc = ['qzc', 18];
 ```
 
-###越界元素
+### 越界元素
 当赋值给越界元素时，类型会被限制为元组中每个类型的联合类型
 
 ```typescript
@@ -55,10 +55,10 @@
     let test = qzc[2].slice(1) // 报错，因为只能访问联合类型中公有的属性或方法
 ```
 
-##枚举
+## 枚举
 用于取值被限定在一定范围内的场景。TypeScript的枚举类型概念来源于C#
 
-###例子
+### 例子
 
 ```typescript
     enum Days {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
@@ -95,7 +95,7 @@
     console.log(Days[6] === "Sat"); // true
 ```
 
-###手动赋值
+### 手动赋值
 
 ```typescript
     // 未手动赋值的枚举项接着上一个枚举项递增，递增步长为1
@@ -108,14 +108,14 @@
     enum Days {Sun = -1, Mon, Tue = 2.1, Wed, Thu, Fri, Sat};
 ```
 
-###常数项和计算所得项
+### 常数项和计算所得项
 
 ```typescript
     enum Color {Red, Green, Blue = "blue".length};
 ```
 * `Blue`为计算所得项。未手动赋值的项不能紧接在计算所得项后面
 
-###常数枚举
+### 常数枚举
 
 ```typescript
     const enum Directions {
@@ -135,7 +135,7 @@
     var directions = [0 /* Up */, 1 /* Down */, 2 /* Left */, 3 /* Right */];
 ```
 
-###外部枚举
+### 外部枚举
 和声明语句一样，常出现在声明文件中
 
 ```typescript

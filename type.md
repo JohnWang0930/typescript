@@ -1,9 +1,9 @@
-#对象的类型--接口
+# 对象的类型--接口
 
-##什么是接口?
+## 什么是接口?
 对行为的抽象，具体如何行动需要由类（classes）去实现。
 
-##简单例子
+## 简单例子
 
 ```typescript
   interface Person {
@@ -19,7 +19,7 @@
 
 * 上例中，赋值的时候，变量的形状必须和接口保持一致。
 
-##可选属性
+## 可选属性
 
 ```typescript
   interface Person {
@@ -34,7 +34,7 @@
 
 * 上例中，`age`可以不定义
 
-##任意属性
+## 任意属性
 
 ```typescript
   interface Person {
@@ -51,7 +51,7 @@
 
 ** 定义了任意属性后，确定属性和可选属性都必须是它的子属性 **
 
-##只读属性
+## 只读属性
 
 ```typescript
   interface Person {
@@ -72,9 +72,9 @@
 
 - - -
 
-#数组的类型
+# 数组的类型
 
-##elemType[]表示
+## elemType[]表示
 
 ```typescript
     let fibonacci: number[] = [1,1,2,3,5,8];
@@ -83,7 +83,7 @@
 * 数组的项中不允许出现其他类型
 * 不仅在定义时会限制，使用数组方法时也会限制。如`.push`
 
-##数组泛型 Array<elemType>
+## 数组泛型 Array<elemType>
 
 可以使用数组泛型 `Array<elemType>`来表示数组
 
@@ -91,7 +91,7 @@
     let fibonacci: Array<number> = [1,1,2,3,5,8];
 ```
 
-##用接口表示数组
+## 用接口表示数组
 
 ```typescript
     interface NumberArray {
@@ -102,7 +102,7 @@
 
 * 上例中，只要`index`的类型是`number`，值的类型必须是`number`
 
-##类数组
+## 类数组
 
 类数组（Array-like Object）不是数组类型，比如 `arguments`
 
@@ -121,9 +121,9 @@
 
 - - -
 
-#函数的类型
+# 函数的类型
 
-##定义函数
+## 定义函数
 
 1.函数声明
 
@@ -168,7 +168,7 @@
     }
 ```
 
-##函数可选参数
+## 函数可选参数
 
 ```typescript
     function buildName(firstName: string, lastName?: string) {
@@ -182,7 +182,7 @@
 
 ** 可选参数必须在最后定义 **
 
-##参数默认值
+## 参数默认值
 
 ```typescript
     function buildName(firstName: string, lastName: string = 'Cat'){
@@ -190,7 +190,7 @@
     }
 ```
 
-##剩余参数
+## 剩余参数
 
 ```typescript
     function push(array, ...rest) {
@@ -212,7 +212,7 @@
 
 ** `rest`参数只能是最后一个参数 **
 
-##重载
+## 重载
 
 重载允许一个函数接收不同数量或类型的参数时，做出不同的处理。
 
@@ -235,17 +235,17 @@
 
 - - -
 
-#类型断言
+# 类型断言
 
 手动指定一个值的类型。
 
-##语法
+## 语法
 
 `<类型>值` 或者 `值 as 类型`
 
 * 在tsx中必须用后一种
 
-##将联合类型的变量指定为更加具体的类型
+## 将联合类型的变量指定为更加具体的类型
 
 ```typescript
     function getLength(something: string | number): number {
@@ -259,11 +259,11 @@
 
 - - -
 
-#声明文件
+# 声明文件
 
 使用第三方库时，需要引用它的声明文件
 
-##声明语句
+## 声明语句
 
 使用第三方库jQuery
 
@@ -272,7 +272,7 @@
     $('#foo');
 ```
 
-##声明文件
+## 声明文件
 
 通常把类型声明放到一个单独的文件中
 
@@ -291,7 +291,7 @@
     $('#foo');
 ```
 
-##第三方声明文件
+## 第三方声明文件
 
 推荐使用工具统一管理第三方库的声明文件。如 [@types](https://blogs.msdn.microsoft.com/typescript/2016/06/15/the-future-of-declaration-files/);
 
@@ -305,11 +305,11 @@
 
 - - -
 
-#内置对象
+# 内置对象
 
 JavaScript中的内置对象可以直接在TypeScript中当做定义好了的类型
 
-##ECMAScript的内置对象
+## ECMAScript的内置对象
 
 如`Boolean`、`Error`、`Date`、`RegExp`
 
@@ -320,7 +320,7 @@ JavaScript中的内置对象可以直接在TypeScript中当做定义好了的类
     let r: RegExp = /[a-z]/;
 ```
 
-##DOM和BOM的内置对象
+## DOM和BOM的内置对象
 
 如`Document`、`HTMLElement`、`Event`、`NodeList`
 
@@ -332,7 +332,7 @@ JavaScript中的内置对象可以直接在TypeScript中当做定义好了的类
     })
 ```
 
-##TypeScript核心库的定义文件
+## TypeScript核心库的定义文件
 
 以上两种内置对象的定义文件都在TypeScript核心库的定义文件中
 
@@ -368,7 +368,7 @@ DOM中的例子
     }
 ```
 
-##TypeScript写Node.js
+## TypeScript写Node.js
 
 需要引入第三方声明文件
 

@@ -1,9 +1,9 @@
-#类
+# 类
 传统方法中，JavaScript 通过构造函数实现类的概念，通过原型链实现继承。而在 ES6 中，我们终于迎来了 class。
 
 TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一些新的用法。
 
-##概念
+## 概念
 
 * 类（Class）：定义了一件事物的抽象特点，包含它的属性和方法
 * 对象（Object）：类的实例，通过`new`生成
@@ -16,11 +16,11 @@ TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一�
 * 抽象类（Abstract Class）：抽象类是供其它类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现
 * 接口（Interface）：不同类之间公有的属性或方法，可以以抽象成一个接口。接口可以被类实现（implements）。一个类只能继承另一个类，但是可以实现多个接口
 
-##ES6中类的用法
+## ES6中类的用法
 
 具体可以参考 [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/class);
 
-###属性和方法
+### 属性和方法
 ```javascript
     class Animal {
         constructor(name) {
@@ -35,7 +35,7 @@ TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一�
     console.log(a.sayHi()); // My name is Jack;
 ```
 
-###类的继承
+### 类的继承
 ```javascript
     class Cat extends Animal {
         constructor (name) {
@@ -51,7 +51,7 @@ TypeScript 除了实现了所有 ES6 中的类的功能以外，还添加了一�
     console.log(c.sayHi()); // Meow, My name is Tom
 ```
 
-###存取器
+### 存取器
 setter 和 getter 可以改变属性的赋值和读取行为
 ```javascript
     class Animal {
@@ -71,7 +71,7 @@ setter 和 getter 可以改变属性的赋值和读取行为
     console.log(a.name) // Jack
 ```
 
-###静态方法
+### 静态方法
 `static`修饰符修饰的方法成为静态方法，不需要实例化，而是直接通过类来调用
 ```javascript
     class Animal {
@@ -85,9 +85,9 @@ setter 和 getter 可以改变属性的赋值和读取行为
     a.isAnimal(a); // TypeError: a.isAnimal is not a function
 ```
 
-##ES7中类的用法
+## ES7中类的用法
 
-###实例属性
+### 实例属性
 
 ```javascript
     class Animal {
@@ -101,7 +101,7 @@ setter 和 getter 可以改变属性的赋值和读取行为
     console.log(a.name); // Jack
 ```
 
-###静态属性
+### 静态属性
 
 ```javascript
     class Animal {
@@ -114,9 +114,9 @@ setter 和 getter 可以改变属性的赋值和读取行为
     console.log(Animal.num); // 12
 ```
 
-##TypeScript中类的用法
+## TypeScript中类的用法
 
-###public provate和protected
+### public provate和protected
 
 TypeScript可以使用三种访问修饰符（Access Modifiers），分别是`public`、`private`和`protected`
 * `public`修饰的属性或方法是公有的，可以再任何地方被访问到，默认所有的属性和方法都是`public`
@@ -161,7 +161,7 @@ TypeScript可以使用三种访问修饰符（Access Modifiers），分别是`pu
     }
 ```
 
-###抽象类
+### 抽象类
 不允许被实例化，继承该抽象类的子类必须实现该类的抽象方法
 
 ```typescript
@@ -194,7 +194,7 @@ TypeScript可以使用三种访问修饰符（Access Modifiers），分别是`pu
 ```
 *建议看看编译后的js文件
 
-###类的类型
+### 类的类型
 与接口类似
 
 ```typescript
@@ -212,11 +212,11 @@ TypeScript可以使用三种访问修饰符（Access Modifiers），分别是`pu
     console.log(a.sayHi()); // My name is Jack
 ```
 
-##类与接口
+## 类与接口
 
 接口可以用于对对象的形状进行描述，还可以对类的一部分行为进行抽象
 
-###类实现接口
+### 类实现接口
 
 实现（impleements）是面向对象中的一个重要概念。一般来讲，一个类只能继承自另一个类，有时候不同类之间可以有一些共有的特性，这时候就可以把特性提取成接口，用 `implements`关键字来实现。这个特性大大提高了面向对象的灵活性。
 
@@ -266,7 +266,7 @@ ex：门是一个类，防盗门是门的子类。防盗门有一个报警器的
     }
 ```
 
-###接口继承接口
+### 接口继承接口
 
 ```typescript
     interface Alarm{
@@ -278,7 +278,7 @@ ex：门是一个类，防盗门是门的子类。防盗门有一个报警器的
     }
 ```
 
-###接口继承类
+### 接口继承类
 
 ```typescript
     class Point {
@@ -293,7 +293,7 @@ ex：门是一个类，防盗门是门的子类。防盗门有一个报警器的
     let point3d: Point3d = {x: 1, y: 2, z: 3};
 ```
 
-###混合类型
+### 混合类型
 
 用接口的方式来定义一个函数需要符合的形状
 

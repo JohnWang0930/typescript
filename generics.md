@@ -1,9 +1,9 @@
-##泛型
+## 泛型
 
 泛型（Generics）是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性。
 相比于`any`类型，泛型来创建可复用的组件要更好，因为泛型会保留参数类型。
 
-##简单例子
+## 简单例子
 
 ```typescript
     function createArray(length: number, value: any): Array<any> {
@@ -32,7 +32,7 @@
     createArray<string>(3, 'x');
 ```
 
-##多个类型参数
+## 多个类型参数
 
 ```typescript
     function swap<T,U>(tuple: [T,U]):[U,T] {
@@ -42,7 +42,7 @@
     swap([7, 'seven']); // ['seven', 7]
 ```
 
-##泛型约束
+## 泛型约束
 
 在函数内部使用泛型变量的时候，由于事先不知道它是哪种类型，所以不能随意的操作它的属性或方法
 
@@ -81,7 +81,7 @@
     copyFields(x,{b: 10, d: 20});
 ```
 
-##泛型接口
+## 泛型接口
 
 使用含有泛型的接口来定义函数的形状
 
@@ -120,7 +120,7 @@
     createArray(3, 'x'); // ['x',x','x']
 ```
 
-##泛型类
+## 泛型类
 
 ```typescript
     class GenericNumber<T> {
@@ -133,7 +133,7 @@
     myGenericNumber.add = function(x, y) { return x + y; };
 ```
 
-##泛型参数的默认类型
+## 泛型参数的默认类型
 
 ts2.3后，可以为泛型中的类型参数指定默认类型
 
