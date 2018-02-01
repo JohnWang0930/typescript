@@ -136,7 +136,7 @@ TypeScript可以使用三种访问修饰符（Access Modifiers），分别是`pu
     a.name = 'Tom'; // 不允许访问
 ```
 
-**编译之后的代码并没有限制 `private`属性在外部的可访问性
+**编译之后的代码并没有限制 `private`属性在外部的可访问性**
 
 在子类中，`private`修饰的属性和方法也不允许访问，`protected`修饰的属性和方法可以访问
 ```typescript
