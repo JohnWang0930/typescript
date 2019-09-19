@@ -4,12 +4,16 @@
 */
 // 布尔值
 let isDone: boolean = true;
+let createdNewBoolean: boolean = new Boolean(1); // new Boolean()返回的是Boolean对象
+let createdNewBoolean: boolean = Boolean(1); // 直接调用Boolean()返回Boolean值
 
 // 字符串和数字（数字支持二进制、八进制、十进制、十六进制）
-let decLiteral:number = 7; // 十进制
-let hexLiteral:number = 0xf00d; // 十六进制
-let binaryLiteral:number = 0b1010; // 二进制
-let octalLiteral:number = 0o744; // 八进制
+let decLiteral: number = 7; // 十进制
+let hexLiteral: number = 0xf00d; // 十六进制
+let binaryLiteral: number = 0b1010; // 二进制
+let octalLiteral: number = 0o744; // 八进制
+let notANumber: number = NaN;
+let infinityNumber: number = Infinity;
 
 let people: string = "qzc";
 let age: number = 12;
@@ -39,6 +43,13 @@ let colorName: string = Color[2];
 let notSure: any = 4;
 notSure = true;
 let listAny: any = [1,"2", true];
+// 未声明类型的变量会被识别为任意值类型
+let something;
+something = 'seven';
+something = 7;
+// 如果定义变量时未声明类型但是给了初始值，ts会类型推论
+let something = 'seven'; // 等价于 let somthing: string = 'seven';
+something = 7; // 编译时报错
 
 // void类型
 // 当一个函数没有返回值时，通常会见到其返回值类型是 void

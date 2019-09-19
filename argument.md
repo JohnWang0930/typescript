@@ -11,15 +11,15 @@
 在js中，不需要明确指出参数名，就能访问它们
 
 ```typescript
-    function test(){
-        let s = "";
-        console.log(arguments)
-        for(let i = 0; i < arguments.length; i++){
-            console.log(arguments[i]);
-            s += arguments[i]+",";
-        }
-        return s;
+function test(){
+    let s = "";
+    console.log(arguments)
+    for(let i = 0; i < arguments.length; i++){
+        console.log(arguments[i]);
+        s += arguments[i]+",";
     }
+    return s;
+}
 ```
 
 ## 3.属性
@@ -33,16 +33,16 @@
 ## 4.转换为真正的`Array`
 
 ```typescript
-    var args = Array.prototype.slice.call(arguments);
-    var args = [].slice.call(arguments);
+var args = Array.prototype.slice.call(arguments);
+var args = [].slice.call(arguments);
 
-    // es6
-    const args = Array.from(arguments);
+// es6
+const args = Array.from(arguments);
 ```
 
 对参数使用`slice`会阻止某些JavaScript引擎中的优化
 通过遍历`arguments`对象来构造一个新的数组
 
 ```typescript
-    var args = (arguments.length === 1 ? [arguments[0]:Array.apply(null, arguments)]);
+var args = (arguments.length === 1 ? [arguments[0]:Array.apply(null, arguments)]);
 ```
